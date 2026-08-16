@@ -16,38 +16,32 @@ if (menuBtn && navLinks) {
     });
   });
 }
-
 // ============================
-// 2. نموذج الاتصال (Contact Form)
+// 2. نموذج الاتصال - Formspree
 // ============================
 const contactForm = document.querySelector("#contactForm");
 const formMessage = document.querySelector("#formMessage");
 
-if (contactForm && formMessage) {
+if (contactForm) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
+    formMessage.textContent = "Sending...";
+    formMessage.style.color = "blue";
 
-    const name = document.querySelector("#name").value.trim();
-    const email = document.querySelector("#email").value.trim();
-    const subject = document.querySelector("#subject").value.trim();
-    const message = document.querySelector("#message").value.trim();
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!name || !email || !subject || !message) {
-      formMessage.textContent = "Please fill in all fields.";
-      formMessage.style.color = "red";
-      return;
-    }
-    if (!emailPattern.test(email)) {
-      formMessage.textContent = "Please enter a valid email address.";
-      formMessage.style.color = "red";
-      return;
-    }
-
-    formMessage.textContent = "Your message has been sent successfully!";
-    formMessage.style.color = "green";
-    contactForm.reset();
+    fetch(contactForm.action, {
+      method: "POST",
+      body: new FormData(contactForm),
+      headers: { Accept: "application/json" },
+    })
+      .then(() => {
+        formMessage.textContent = "Your message has been sent successfully!";
+        formMessage.style.color = "green";
+        contactForm.reset();
+      })
+      .catch(() => {
+        formMessage.textContent = "Failed to send. Try again later.";
+        formMessage.style.color = "red";
+      });
   });
 }
 

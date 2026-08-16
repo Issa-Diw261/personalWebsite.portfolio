@@ -159,7 +159,7 @@
             <p>Brand Idesntity</p>
           </div>
         </div>
-        <a href="#" class="btn">Download CV</a>
+        <a href="CV.html" target="_blank" class="btn">Download CV</a>
       </div>
     </section>
     <section class="stats">
@@ -221,17 +221,25 @@
           </div>
         </div>
         <div class="form-card reveal reveal-delay-2">
-          <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" />
-            <input type="email" id="email" placeholder="Your Email" />
-            <input type="text" id="subject" placeholder="Subject" />
+          <form
+            id="contactForm"
+            action="https://formspree.io/f/xnpablao"
+            method="POST"
+          >
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <input type="text" name="subject" placeholder="Subject" required />
             <textarea
-              id="message"
+              name="message"
               placeholder="Write Your Message..."
+              required
             ></textarea>
-
             <button type="submit" class="btn">Send Message</button>
-
             <p id="formMessage"></p>
           </form>
         </div>
