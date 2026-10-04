@@ -16,6 +16,7 @@ if (menuBtn && navLinks) {
     });
   });
 }
+
 // ============================
 // 2. نموذج الاتصال - Formspree
 // ============================
@@ -53,21 +54,17 @@ const imageModal = document.querySelector("#imageModal");
 const modalImage = document.querySelector("#modalImage");
 const closeModal = document.querySelector("#closeModal");
 
-// التحقق من وجود العناصر
 if (!imageModal || !modalImage || !closeModal) {
   console.error("❌ خطأ: أحد عناصر المودال غير موجود في الصفحة!");
-  console.log("imageModal:", imageModal);
-  console.log("modalImage:", modalImage);
-  console.log("closeModal:", closeModal);
 } else {
-  // إضافة حدث الضغط على الصور
+  // فتح الصور عند النقر على أي مشروع في المعرض (بما فيها بطاقة الشهادة)
   projects.forEach((project) => {
     const image = project.querySelector("img");
     if (image) {
       image.addEventListener("click", () => {
         const src = image.getAttribute("src");
-        if (!src || src === "") {
-          alert("هذه الصورة فارغة، يرجى إضافة صورة حقيقية");
+        if (!src || src === "" || src === "images/") {
+          alert("الصورة غير متوفرة حالياً");
           return;
         }
         modalImage.src = src;
@@ -81,7 +78,7 @@ if (!imageModal || !modalImage || !closeModal) {
     imageModal.classList.remove("active");
   });
 
-  // إغلاق المودال عند الضغط على الخلفية
+  // إغلاق المودال عند الضغط خارج الصورة
   imageModal.addEventListener("click", (e) => {
     if (e.target === imageModal) {
       imageModal.classList.remove("active");
@@ -99,63 +96,51 @@ if (!imageModal || !modalImage || !closeModal) {
 // ============================
 // 4. تأثير الظهور عند التمرير (Scroll Reveal)
 // ============================
-
-// اختيار جميع العناصر التي تحمل كلاس .reveal
 const revealElements = document.querySelectorAll(".reveal");
 
-// إنشاء مراقب (Intersection Observer)
 const revealObserver = new IntersectionObserver(
   (entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        // إضافة كلاس active عندما يظهر العنصر في الشاشة
         entry.target.classList.add("active");
-        // إيقاف مراقبة هذا العنصر بعد ظهوره (مرة واحدة)
         observer.unobserve(entry.target);
       }
     });
   },
   {
-    threshold: 0.15, // يظهر عندما يظهر 15% من العنصر
-    rootMargin: "0px 0px -50px 0px", // يظهر قبل الوصول للعنصر بقليل
+    threshold: 0.15,
+    rootMargin: "0px 0px -50px 0px",
   },
 );
 
-// تطبيق المراقبة على جميع العناصر
 revealElements.forEach((el) => revealObserver.observe(el));
 
 // ============================
 // 5. عداد متحرك للأرقام (Animated Counter)
 // ============================
-
-// اختيار جميع أرقام الإحصائيات
 const counters = document.querySelectorAll(".stat h2");
 
-// دالة لتحريك العداد
 const animateCounter = (counter) => {
   const target = parseInt(counter.textContent.replace(/[^0-9]/g, ""));
   if (isNaN(target)) return;
 
-  const duration = 2000; // مدة الحركة بالملي ثانية
-  const stepTime = 16; // تحديث كل 16ms (60fps)
+  const duration = 2000;
+  const stepTime = 16;
   const totalSteps = duration / stepTime;
   let currentStep = 0;
 
   const updateCounter = () => {
     currentStep++;
     const progress = currentStep / totalSteps;
-    // استخدام easing لجعل الحركة ناعمة
     const easedProgress = 1 - Math.pow(1 - progress, 3);
     const currentValue = Math.round(easedProgress * target);
 
-    // إذا كان الرقم يحتوي على + أو % نحافظ عليه
     const suffix = counter.textContent.replace(/[0-9]/g, "");
     counter.textContent = currentValue + suffix;
 
     if (currentStep < totalSteps) {
       requestAnimationFrame(updateCounter);
     } else {
-      // التأكد من وصوله للقيمة النهائية
       counter.textContent = target + suffix;
     }
   };
@@ -163,13 +148,11 @@ const animateCounter = (counter) => {
   updateCounter();
 };
 
-// إنشاء مراقب للعدادات
 const counterObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         const counter = entry.target;
-        // التحقق من أن العداد لم يبدأ بعد
         if (!counter.dataset.animated) {
           counter.dataset.animated = "true";
           animateCounter(counter);
@@ -178,23 +161,20 @@ const counterObserver = new IntersectionObserver(
     });
   },
   {
-    threshold: 0.5, // يبدأ عندما يظهر 50% من العنصر
+    threshold: 0.5,
   },
 );
 
-// تطبيق المراقبة على جميع العدادات
 counters.forEach((counter) => counterObserver.observe(counter));
+
 // ============================
 // 6. زر الرجوع إلى الأعلى (Scroll to Top)
 // ============================
-
-// إنشاء الزر ديناميكياً
 const scrollTopBtn = document.createElement("button");
 scrollTopBtn.classList.add("scroll-top");
 scrollTopBtn.innerHTML = `<i class="fa-solid fa-arrow-up"></i>`;
 document.body.appendChild(scrollTopBtn);
 
-// إظهار/إخفاء الزر حسب التمرير
 window.addEventListener("scroll", () => {
   if (window.scrollY > 400) {
     scrollTopBtn.classList.add("show");
@@ -203,7 +183,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// العودة إلى الأعلى عند الضغط
 scrollTopBtn.addEventListener("click", () => {
   window.scrollTo({
     top: 0,

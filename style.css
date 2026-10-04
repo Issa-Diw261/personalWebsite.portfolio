@@ -6,17 +6,11 @@
 :root {
   --primary: #6c63ff;
   --primary-hover: #564de0;
-
   --dark: #222;
-
   --gray: #666;
-
   --light: #f8f9fc;
-
   --card: #ffffff;
-
   --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
-
   --radius: 20px;
 }
 html {
@@ -28,7 +22,7 @@ body {
   color: var(--dark);
 }
 
-/* Header < */
+/* Header */
 header {
   position: sticky;
   top: 0;
@@ -43,15 +37,13 @@ header {
   align-items: center;
   padding: 25px 80px;
 }
-
 .nav-links {
   display: flex;
   list-style: none;
-  gap: 40px;
+  gap: 35px;
   transition: 0.3s;
   margin-left: auto;
   margin-right: 40px;
-  transition: 0.3s;
 }
 .nav-links a {
   text-decoration: none;
@@ -79,9 +71,6 @@ header {
   font-size: 32px;
   font-weight: bold;
 }
-.nav-links a:hover {
-  color: var(--primary);
-}
 .navbar .btn {
   background: var(--primary);
   color: white;
@@ -90,9 +79,8 @@ header {
   border-radius: 12px;
   transition: 0.3s;
 }
-/* > */
 
-/* Main < */
+/* Main */
 .main {
   display: flex;
   justify-content: space-between;
@@ -165,8 +153,8 @@ header {
   display: block;
   border: 10px solid #f0eeff;
 }
-/* > */
-/* Services < */
+
+/* Services */
 .servs {
   background: #f8f9fc;
   padding: 100px 80px;
@@ -212,18 +200,13 @@ header {
 .card i {
   width: 70px;
   height: 70px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
   font-size: 35px;
-
   color: var(--primary);
   background-color: #f0eeff;
-
   border-radius: 50%;
-
   margin-bottom: 25px;
 }
 .learn-more {
@@ -238,9 +221,8 @@ header {
 .learn-more:hover {
   transform: translateX(5px);
 }
-/* > */
 
-/* Potfolio < */
+/* Portfolio */
 .port {
   padding: 100px 80px;
   background: #fff;
@@ -272,7 +254,7 @@ header {
   bottom: -100px;
   left: 0;
   width: 100%;
-  background: rgba(20, 20, 20, 0.8);
+  background: rgba(20, 20, 20, 0.85);
   color: white;
   transition: 0.4s;
 }
@@ -283,7 +265,6 @@ header {
   font-size: 20px;
   margin-bottom: 6px;
 }
-
 .proj-info p {
   font-size: 15px;
   color: #d5d5d5;
@@ -291,9 +272,8 @@ header {
 .project:hover img {
   transform: scale(1.08);
 }
-/* > */
 
-/* About < */
+/* About */
 .about {
   display: flex;
   justify-content: space-between;
@@ -351,16 +331,12 @@ header {
   transition: 0.3s;
 }
 .btn:hover {
-  /* background: #564de0; */
   background: var(--primary-hover);
-
   transform: translateY(-3px);
-
   box-shadow: 0 10px 25px rgba(108, 99, 255, 0.3);
 }
-/* > */
 
-/* Stats < */
+/* Stats */
 .stats {
   display: flex;
   justify-content: space-around;
@@ -374,7 +350,7 @@ header {
   flex: 1;
   position: relative;
   text-align: center;
-  transition: 0.3;
+  transition: 0.3s;
 }
 .stat:not(:last-child)::after {
   content: "";
@@ -398,8 +374,81 @@ header {
   color: #666;
   font-size: 17px;
 }
-/* > */
-/* Contact < */
+
+/* Certifications Section */
+.certifications {
+  padding: 110px 80px;
+  background: #ffffff;
+}
+.cert-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.cert-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background: var(--card);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid #eceaff;
+  transition: 0.35s ease;
+}
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(108, 99, 255, 0.14);
+}
+.cert-icon {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background: #f0eeff;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.cert-details h3 {
+  font-size: 22px;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+.cert-issuer {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--primary);
+  margin-bottom: 14px;
+}
+.cert-details p {
+  color: var(--gray);
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 18px;
+}
+.cert-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+.cert-code {
+  font-size: 13px;
+  color: #777;
+  background: #f8f9fc;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-family: monospace;
+}
+
+/* Contact */
 .contact {
   padding: 120px 80px;
   background: #fff;
@@ -488,9 +537,8 @@ header {
   transform: translateY(-6px);
   transition: 0.35s;
 }
-/* > */
 
-/* Footer < */
+/* Footer */
 footer {
   margin-top: 100px;
   background: #111;
@@ -531,24 +579,16 @@ footer p {
   font-size: 14px;
 }
 
-/* ============================
-   تأثيرات الظهور عند التمرير
-   ============================ */
-
-/* الحالة الابتدائية (قبل الظهور) */
+/* Scroll Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
-
-/* الحالة النهائية (عند الظهور) */
 .reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* تأخيرات مختلفة للتأثير المتدرج */
 .reveal-delay-1 {
   transition-delay: 0.1s;
 }
@@ -565,13 +605,8 @@ footer p {
   transition-delay: 0.5s;
 }
 
-/* *******************
-
-قسم الريسبوووونسفف
-
-******************* */
+/* Responsive Queries */
 @media (max-width: 992px) {
-  /* Navbar */
   .navbar {
     padding: 20px 40px;
   }
@@ -582,375 +617,69 @@ footer p {
   .navbar .btn {
     padding: 12px 20px;
   }
-
-  /* Main */
   .main {
     padding: 70px 40px;
     gap: 40px;
   }
-
   .main h1 {
     font-size: 48px;
   }
-
   .main-img img {
     width: 350px;
   }
-
-  /* Services */
-
   .servs,
   .port,
-  .contact {
+  .contact,
+  .certifications {
     padding: 90px 40px;
   }
-
   .servs-container {
     gap: 20px;
   }
-
   .card {
     padding: 30px;
   }
-
-  /* Portfolio */
-
   .port-container {
     gap: 20px;
   }
-
   .project img {
     height: 220px;
   }
-
-  /* About */
-
   .about {
     padding: 100px 40px;
     gap: 40px;
   }
-
   .about-content h2 {
     font-size: 36px;
   }
-
-  /* Stats  */
-
   .stats {
     margin: 60px 40px;
     padding: 70px 30px;
   }
-
-  /* Contact  */
-
   .contact-wrapper {
     gap: 25px;
   }
-
   .contact-card,
   .form-card {
     padding: 35px;
   }
 }
 
-/* *************
-Mobile
-************* */
-
 @media (max-width: 768px) {
-  /* Navbar  */
+  .menu-btn {
+    display: block;
+  }
   .navbar {
     padding: 20px 25px;
     flex-wrap: wrap;
     gap: 20px;
   }
-
   .logo {
     font-size: 28px;
   }
-
   .nav-links {
+    display: none;
     order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 20px;
-    margin: 0;
-  }
-
-  .navbar .btn {
-    padding: 11px 16px;
-    font-size: 14px;
-  }
-
-  /* main  */
-  .main {
-    flex-direction: column;
-    text-align: center;
-    padding: 70px 25px;
-    min-height: auto;
-  }
-
-  .main-txt {
-    width: 100%;
-  }
-
-  .main h1 {
-    font-size: 44px;
-  }
-
-  .descrip {
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .main-btns {
-    justify-content: center;
-  }
-
-  .main-img {
-    width: 100%;
-    margin-top: 30px;
-  }
-
-  .main-img img {
-    width: 230px;
-  }
-
-  /* Section titles  */
-
-  .section-ttl {
-    margin-bottom: 45px;
-  }
-
-  .section-ttl h2 {
-    font-size: 34px;
-  }
-
-  /* Services  */
-
-  .servs {
-    padding: 80px 25px;
-  }
-  .servs-container {
-    flex-direction: column;
-    gap: 25px;
-  }
-
-  .card {
-    width: 100%;
-  }
-
-  .card p {
-    max-width: 100%;
-  }
-
-  /* Portfolio  */
-
-  .port {
-    padding: 80px 25px;
-  }
-
-  .port-container {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-
-  .project img {
-    height: 220px;
-  }
-
-  /* About  */
-
-  .about {
-    flex-direction: column;
-    padding: 90px 25px;
-    gap: 45px;
-  }
-
-  .about-img,
-  .about-content {
-    width: 100%;
-  }
-
-  .about-content h2 {
-    font-size: 36px;
-  }
-
-  /* Stats */
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px 20px;
-    margin: 50px 25px;
-    padding: 60px 20px;
-  }
-
-  .stat:not(:last-child)::after {
-    display: none;
-  }
-
-  .stat h2 {
-    font-size: 40px;
-  }
-
-  /* Contact */
-  .contact {
-    padding: 90px 25px;
-  }
-
-  .contact-wrapper {
-    flex-direction: column;
-    gap: 25px;
-    margin-top: 45px;
-  }
-
-  .contact-card,
-  .form-card {
-    width: 100%;
-    padding: 30px;
-  }
-
-  .contact-card h3 {
-    font-size: 28px;
-  }
-
-  .form-card button {
-    width: 100%;
-  }
-
-  /* Footer */
-  footer {
-    margin-top: 70px;
-    padding: 60px 20px;
-  }
-}
-
-/* ***********
-
-Small phones
-
-*********** */
-@media (max-width: 480px) {
-  /* Navbar */
-  .navbar {
-    padding: 18px 20px;
-  }
-
-  .nav-links {
-    gap: 15px;
-    font-size: 14px;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 5px;
-  }
-
-  .navbar .btn {
-    display: none;
-  }
-
-  /* main */
-  .main {
-    padding: 55px 20px;
-  }
-
-  .tag {
-    font-size: 15px;
-  }
-
-  .main h1 {
-    font-size: 36px;
-  }
-
-  .descrip {
-    font-size: 15px;
-  }
-
-  .main-btns {
-    gap: 12px;
-  }
-
-  .main .btn,
-  .btn-outline {
-    padding: 12px 20px;
-    font-size: 14px;
-  }
-
-  .main-img img {
-    width: 270px;
-  }
-
-  /* Section titles */
-  .section-ttl h2 {
-    font-size: 30px;
-  }
-
-  /* Portfolio */
-  .port-container {
-    grid-template-columns: 1fr;
-  }
-
-  .project img {
-    height: 250px;
-  }
-
-  /* About */
-  .about-content h2 {
-    font-size: 30px;
-  }
-
-  /* Stats */
-  .stats {
-    grid-template-columns: 1fr 1fr;
-    margin: 40px 20px;
-    padding: 45px 15px;
-  }
-
-  .stat h2 {
-    font-size: 34px;
-  }
-
-  .stat p {
-    font-size: 14px;
-  }
-
-  /* Contact */
-  .contact-card,
-  .form-card {
-    padding: 25px 20px;
-  }
-
-  .contact-item {
-    gap: 12px;
-  }
-
-  .icon {
-    width: 48px;
-    height: 48px;
-    min-width: 48px;
-  }
-
-  /* Footer */
-  .social a {
-    margin: 0 5px;
-  }
-}
-.menu-btn {
-  display: none;
-  background: none;
-  border: none;
-  color: var(--dark);
-  font-size: 25px;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-btn {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
     flex-direction: column;
     width: 100%;
     gap: 0;
@@ -960,27 +689,227 @@ Small phones
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   }
-
+  .nav-links.active {
+    display: flex;
+  }
   .nav-links li {
     width: 100%;
     text-align: center;
   }
-
   .nav-links a {
     display: block;
     padding: 12px;
   }
-
   .nav-links a::after {
     display: none;
-  }
-
-  .nav-links.active {
-    display: flex;
   }
   .navbar > .btn {
     display: none;
   }
+
+  .main {
+    flex-direction: column;
+    text-align: center;
+    padding: 70px 25px;
+    min-height: auto;
+  }
+  .main-txt {
+    width: 100%;
+  }
+  .main h1 {
+    font-size: 44px;
+  }
+  .descrip {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .main-btns {
+    justify-content: center;
+  }
+  .main-img {
+    width: 100%;
+    margin-top: 30px;
+  }
+  .main-img img {
+    width: 230px;
+  }
+
+  .section-ttl {
+    margin-bottom: 45px;
+  }
+  .section-ttl h2 {
+    font-size: 34px;
+  }
+
+  .servs {
+    padding: 80px 25px;
+  }
+  .servs-container {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .card {
+    width: 100%;
+  }
+  .card p {
+    max-width: 100%;
+  }
+
+  .port {
+    padding: 80px 25px;
+  }
+  .port-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .project img {
+    height: 220px;
+  }
+
+  .certifications {
+    padding: 80px 25px;
+  }
+  .cert-card {
+    flex-direction: column;
+    padding: 30px 25px;
+    gap: 20px;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 90px 25px;
+    gap: 45px;
+  }
+  .about-img,
+  .about-content {
+    width: 100%;
+  }
+  .about-content h2 {
+    font-size: 36px;
+  }
+
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 20px;
+    margin: 50px 25px;
+    padding: 60px 20px;
+  }
+  .stat:not(:last-child)::after {
+    display: none;
+  }
+  .stat h2 {
+    font-size: 40px;
+  }
+
+  .contact {
+    padding: 90px 25px;
+  }
+  .contact-wrapper {
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 45px;
+  }
+  .contact-card,
+  .form-card {
+    width: 100%;
+    padding: 30px;
+  }
+  .contact-card h3 {
+    font-size: 28px;
+  }
+  .form-card button {
+    width: 100%;
+  }
+
+  footer {
+    margin-top: 70px;
+    padding: 60px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 18px 20px;
+  }
+  .nav-links {
+    gap: 15px;
+    font-size: 14px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 5px;
+  }
+  .main {
+    padding: 55px 20px;
+  }
+  .tag {
+    font-size: 15px;
+  }
+  .main h1 {
+    font-size: 36px;
+  }
+  .descrip {
+    font-size: 15px;
+  }
+  .main-btns {
+    gap: 12px;
+  }
+  .main .btn,
+  .btn-outline {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+  .main-img img {
+    width: 270px;
+  }
+  .section-ttl h2 {
+    font-size: 30px;
+  }
+  .port-container {
+    grid-template-columns: 1fr;
+  }
+  .project img {
+    height: 250px;
+  }
+  .about-content h2 {
+    font-size: 30px;
+  }
+  .stats {
+    grid-template-columns: 1fr 1fr;
+    margin: 40px 20px;
+    padding: 45px 15px;
+  }
+  .stat h2 {
+    font-size: 34px;
+  }
+  .stat p {
+    font-size: 14px;
+  }
+  .contact-card,
+  .form-card {
+    padding: 25px 20px;
+  }
+  .contact-item {
+    gap: 12px;
+  }
+  .icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+  }
+  .social a {
+    margin: 0 5px;
+  }
+}
+
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--dark);
+  font-size: 25px;
+  cursor: pointer;
 }
 .image-modal {
   position: fixed;
@@ -992,11 +921,9 @@ Small phones
   padding: 30px;
   z-index: 2000;
 }
-
 .image-modal.active {
   display: flex;
 }
-
 .image-modal img {
   max-width: 90%;
   max-height: 90vh;
@@ -1004,7 +931,6 @@ Small phones
   border-radius: 15px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
-
 .close-modal {
   position: absolute;
   top: 25px;
@@ -1016,15 +942,9 @@ Small phones
   cursor: pointer;
   line-height: 1;
 }
-/* ============================
-   عداد متحرك للأرقام
-   ============================ */
 .stat h2 .counter {
   display: inline-block;
 }
-/* ============================
-   زر الرجوع إلى الأعلى
-   ============================ */
 .scroll-top {
   position: fixed;
   bottom: 30px;
@@ -1044,12 +964,10 @@ Small phones
   z-index: 9999;
   box-shadow: 0 5px 20px rgba(108, 99, 255, 0.3);
 }
-
 .scroll-top:hover {
   background: var(--primary-hover);
   transform: translateY(-5px);
 }
-
 .scroll-top.show {
   display: flex;
 }
